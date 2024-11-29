@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Page</title>
+</head>
+<body>
+  <h1>Games List</h1>
+  <ul>
+    <% games.forEach(game => { %>
+      <li>
+        <h2><%= game.title %></h2>
+        <p>Release Date: <%= new Date(game.release_date).toDateString() %></p>
+        <p>Developer ID: <%= game.developer_id %></p>
+        <p>Genre ID: <%= game.genre_id %></p>
+      </li>
+    <% }); %>
+  </ul>
+  <a href="/">Home Page</a>
+  <a href="/update-games">Update Game Info</a>
+</body>
+</html>
+
