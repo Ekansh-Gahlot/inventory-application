@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developers Update</title>
+</head>
+<body>
+    <form action="/update-developers" method="POST">
+        <% developers.forEach(dev=>{ %>
+            <div style="margin-bottom: 20px;">
+            <h2>Developer Id: <%=dev.id%></h2>
+
+            <label for="name-<%= dev.id %>">Name:</label>
+            <input type="text" id="name-<%= dev.id %>" name="developers[<%= dev.id %>][name]" value="<%= dev.name %>" required>
+
+            <label for="website-<%= dev.website %>">Website:</label>
+            <input type="text" id="website-<%= dev.website %>" name="developers[<%= dev.id %>][website]" value="<%= dev.website %>" required>
+
+
+            <input type="hidden" name="developers[<%= dev.id %>][id]" value="<%= dev.id %>">
+
+            </div>
+            <% }); %>
+        <button type="submit">Update Developers</button>
+    </form>
+    <a href="/">Home Page</a>
+</body>
+</html>

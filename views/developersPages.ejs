@@ -8,7 +8,14 @@
 <body>
     <h1>All Developers</h1>
     <ul>
-        
+        <%devs.forEach(dev => { %>
+            <li>
+                <h2><%= dev.name %></h2>
+                <h3><a href="<%= dev.website %>"><%= dev.website %></a></h3>
+            </li>
+        <% }); %>    
     </ul>
+    <a href="/">Home Page</a>
+    <a href="/update-developers">Update Developers</a>
 </body>
 </html>

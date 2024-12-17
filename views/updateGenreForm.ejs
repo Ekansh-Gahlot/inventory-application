@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update genres</title>
+</head>
+<body>
+    <h1>Update genres</h1>
+    <form action="/update-genres" method="POST">
+        <% genres.forEach(genre => { %>
+            <div style="margin-bottom: 20px;">
+                <h2>Genre ID: <%= genre.id %></h2>
+
+                <label for="title-<%= genre.name %>">Name:</label>
+                <input type="text" id="title-<%= genre.name %>" name="genres[<%= genre.id %>][name]" value="<%= genre.name %>" required>
+                <br>
+
+                <label for="genre-<%= genre.description %>">Description</label>
+                <input type='text' id="genre-<%= genre.description %>" name="genres[<%= genre.id %>][description]" value="<%= genre.description %>" required>
+
+                <br>
+                
+                <!-- Include the genre ID as a hidden input -->
+                <input type="hidden" name="genres[<%= genre.id %>][id]" value="<%= genre.id %>">
+            </div>
+        <% }); %>
+        <button type="submit">Update All genres</button>
+    </form>
+    <a href="/">Home Page</a>
+</body>
+</html>

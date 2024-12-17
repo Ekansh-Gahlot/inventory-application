@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Page</title>
+</head>
+<body>
+  <h1>Genre List</h1>
+  <ul>
+    <% genres.forEach(genre => { %>
+      <li>
+        <h2><%= genre.title %></h2>
+        <!-- <p>Genre ID: <%= genre.id %></p> -->
+        <p>Genre Name: <%= genre.name %></p>
+        <p>Genre Description: <%= genre.description %></p>
+      </li>
+    <% }); %>
+  </ul>
+  <a href="/">Home Page</a>
+  <a href="/update-genres">Update Genres Info</a>
+</body>
+</html>
+
